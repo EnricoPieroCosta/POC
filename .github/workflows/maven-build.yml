@@ -32,8 +32,8 @@ jobs:
       
     - name: EC2 Deploy Action
       run: |
-           echo "praticaTercaChaves.pem" > private_key && chmod 400 private_key
-           ssh -o StrictHostKeyChecking=no -i "private_key" ubuntu@ec2-52-207-221-11.compute-1.amazonaws.com "
+           echo praticaTercaChaves.pem && chmod 400 praticaTercaChaves.pem
+           ssh -o StrictHostKeyChecking=no -i praticaTercaChaves.pem ubuntu@ec2-52-207-221-11.compute-1.amazonaws.com "
              cd /home/ubuntu/produtoExemplo &&
              git pull &&
              mvn clean package -DskipTests &&
